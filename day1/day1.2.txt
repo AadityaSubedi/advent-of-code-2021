@@ -1,0 +1,38 @@
+
+
+def main():
+    x =""
+    prevSum =0
+    presentSum=0   
+    count=0 
+    inc=0
+    isFirst = True
+    with open("inputs.txt") as file:
+        for line in file:
+            presentSum += int(line)
+            count = (count+1) %3
+            if count == 2:
+                x = file.tell()
+            if not count:
+                if isFirst:
+                    isFirst = False
+                    prevSum = presentSum
+                    continue
+                if presentSum > prevSum:
+                    inc+=1
+                prevSum = presentSum
+                file.seek(x)
+
+
+
+
+            
+
+    print(inc)
+            
+
+
+
+
+if __name__ == "__main__":
+    main()
