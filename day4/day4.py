@@ -46,8 +46,10 @@ def part1(boards, drawer):
 
     
 
-def part1(boards, drawer):
+def part2(boards, drawer):
     for el in drawer:
+        if el in drawer[:5]:
+            continue
         # mark the element in each board 
         for k, board in enumerate(boards):
             for i,row in enumerate(board):
