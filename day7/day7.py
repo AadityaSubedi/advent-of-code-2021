@@ -11,7 +11,7 @@ def linear_fuel(steps):
 
 
 def part1(positions):
-    min_fuel = 0
+    min_fuel = float("inf")
     for key in range(max(positions)):
         min_fuel = min(sum(linear_fuel(abs(k-key))*count for k,
                        count in positions.items()), min_fuel)
@@ -19,7 +19,7 @@ def part1(positions):
 
 
 def part2(positions):
-    min_fuel = 0
+    min_fuel = float("inf")
     for key in range(max(positions)):
         min_fuel = min(sum(quad_fuel(abs(k-key))*count for k,
                        count in positions.items()), min_fuel)
